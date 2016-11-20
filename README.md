@@ -4,5 +4,6 @@ It works with both Windows and Android
 
 
 Usage:
-
+```c#
 EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+```
