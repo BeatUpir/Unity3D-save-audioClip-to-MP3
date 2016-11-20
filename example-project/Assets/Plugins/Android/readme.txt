@@ -1,1 +1,1 @@
-.so library for android
+LAME Mp3 library for android
