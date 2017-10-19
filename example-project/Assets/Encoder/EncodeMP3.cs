@@ -1,4 +1,4 @@
-﻿/*                    GNU GENERAL PUBLIC LICENSE
+/*                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
@@ -24,42 +24,35 @@ public static class EncodeMP3
 
 	public static void convert (AudioClip clip, string path, int bitRate)
 	{
+		var samples = new float[clip.samples * clip.channels];
+		clip.GetData (samples, 0);
+		Convert (samples, path, clip.frequency, clip.channels, bitRate);
+	}
+
+	public static void convert (float[] samples, string path, int sampleRate, int channels, int bitRate)
+	{
 
 		if (!path.EndsWith (".mp3"))
 			path = path + ".mp3";
-		
-		ConvertAndWrite (clip, path, bitRate);
 
+		ConvertAndWrite (samples, path, sampleRate, channels, bitRate);
 	}
 
-
-	//  derived from Gregorio Zanon's script
-	private static void ConvertAndWrite (AudioClip clip, string path, int bitRate)
+	static void ConvertAndWrite (float[] samples, string path, int sampleRate, int channels, int bitRate)
 	{
-		var samples = new float[clip.samples * clip.channels];
+		var intData = new Int16[samples.Length];
+		var bytesData = new Byte[samples.Length * sizeof(Int16)];
 
-		clip.GetData (samples, 0);
+		const float rescaleFactor = 32767;
 
-		Int16[] intData = new Int16[samples.Length];
-		//converting in 2 float[] steps to Int16[], //then Int16[] to Byte[]
-
-		Byte[] bytesData = new Byte[samples.Length * 2];
-		//bytesData array is twice the size of
-		//dataSource array because a float converted in Int16 is 2 bytes.
-
-		const float rescaleFactor = 32767; //to convert float to Int16
-
-		for (int i = 0; i < samples.Length; i++) {
-			intData [i] = (short)(samples [i] * rescaleFactor);
-			Byte[] byteArr = new Byte[2];
-			byteArr = BitConverter.GetBytes (intData [i]);
-			byteArr.CopyTo (bytesData, i * 2);
+		for (int i = 0; i < samples.Length; i++)
+		{
+			intData[i] = (short)(samples[i] * rescaleFactor);
 		}
+		Buffer.BlockCopy(intData, 0, bytesData, 0, bytesData.Length);
 
-		File.WriteAllBytes (path, ConvertWavToMp3 (bytesData, clip.frequency, clip.channels, bitRate));
+		File.WriteAllBytes (path, ConvertWavToMp3 (bytesData, sampleRate, channels, bitRate));
 	}
-
-
 
 	static byte[] ConvertWavToMp3 (byte[] wavFile, int sampleRate, int channels, int bitRate)
 	{
