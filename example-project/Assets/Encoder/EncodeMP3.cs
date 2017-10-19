@@ -61,23 +61,15 @@ public static class EncodeMP3
 
 
 
-	private static byte[] ConvertWavToMp3 (byte[] wavFile, int bitRate)
+	static byte[] ConvertWavToMp3 (byte[] wavFile, int sampleRate, int channels, int bitRate)
 	{
 
 		var retMs = new MemoryStream ();
 		var ms = new MemoryStream (wavFile);
-		var rdr = new RawSourceWaveStream (ms, new WaveFormat ());
+		var rdr = new RawSourceWaveStream (ms, new WaveFormat (sampleRate, channels));
 		var wtr = new LameMP3FileWriter (retMs, rdr.WaveFormat, bitRate);
 
 		rdr.CopyTo (wtr);
 		return retMs.ToArray ();
-
-
-
 	}
-	
-	
-
-
-
 }
