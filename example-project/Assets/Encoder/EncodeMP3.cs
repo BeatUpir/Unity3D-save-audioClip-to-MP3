@@ -47,7 +47,7 @@ public static class EncodeMP3
 		//bytesData array is twice the size of
 		//dataSource array because a float converted in Int16 is 2 bytes.
 
-		float rescaleFactor = 32767; //to convert float to Int16
+		const float rescaleFactor = 32767; //to convert float to Int16
 
 		for (int i = 0; i < samples.Length; i++) {
 			intData [i] = (short)(samples [i] * rescaleFactor);
@@ -56,7 +56,7 @@ public static class EncodeMP3
 			byteArr.CopyTo (bytesData, i * 2);
 		}
 
-		File.WriteAllBytes (path, ConvertWavToMp3 (bytesData,bitRate));
+		File.WriteAllBytes (path, ConvertWavToMp3 (bytesData, clip.frequency, clip.channels, bitRate));
 	}
 
 
