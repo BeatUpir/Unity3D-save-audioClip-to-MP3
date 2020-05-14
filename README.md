@@ -1,15 +1,21 @@
 # Unity3D-save-audioClip-to-MP3
-with this package you can save an audioclip to mp3 in unity3d
-It works with both Windows and Android
+With this package you can save an audioclip to mp3 in unity3d. Also plugin can save audioclip to wav and convert wav to mp3 and mp3 to wav.
 
+It works with Windows, Android and IOS(tested). And probably on Mac(untested, but should work). 
+Lame unity port from here https://github.com/3wz/Lame-For-Unity
 
 Usage:
 
 ```c#
+//Save wav
+EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+
+//Save mp3
+EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+
+//Save wav to mp3
+EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+
+//Save mp3 to wav
 EncodeMP3.convert (AudioClip clip, string path, int BitRate);
 ```
-
-If any errors occured you need to change your .NET API level in unity build settings.
-
-For example for Android:
-File => Build Settings => Player Settings => (in Inspector) Other Settings => Optimization => Api Compatibility Level : .Net 2.0 
