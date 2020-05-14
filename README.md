@@ -8,14 +8,11 @@ Usage:
 
 ```c#
 //Save wav
-EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+SavWav.SaveWav (AudioClip clip, int bitRate, Action<byte[]> callback);
 
 //Save mp3
-EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+EncodeMP3.SaveMp3 AudioClip clip, string path, int bitRate);
 
-//Save wav to mp3
-EncodeMP3.convert (AudioClip clip, string path, int BitRate);
-
-//Save mp3 to wav
-EncodeMP3.convert (AudioClip clip, string path, int BitRate);
+//Convert wav to mp3
+byte[] bytes = WavToMp3.ConvertWavToMp3 (AudioClip clip, int bitRate);
 ```
