@@ -10,12 +10,7 @@ Wav save script from https://gist.github.com/darktable/2317063
 Usage:
 
 ```c#
-//Save wav
-SavWav.SaveWav (AudioClip clip, int bitRate, Action<byte[]> callback);
-
-//Save mp3
-EncodeMP3.SaveMp3 AudioClip clip, string path, int bitRate);
-
-//Convert wav to mp3
-byte[] bytes = WavToMp3.ConvertWavToMp3 (AudioClip clip, int bitRate);
+byte[] mp3 = WavToMp3.ConvertWavToMp3(clip, 128);					// Convert wav clip to mp3 bytes array
+EncodeMP3.SaveMp3(clip, $"{Application.dataPath}/mp3File", 128);	// Save AudioClip at path with defined bitray as mp3
+SavWav.SaveWav($"{Application.dataPath}/wavFile", clip);			// Save AudioClip at path with defined bitray as wav
 ```
