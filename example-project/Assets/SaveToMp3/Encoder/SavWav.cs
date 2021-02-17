@@ -34,6 +34,12 @@ using System.Text;
 public static class SavWav {
 	public const int HEADER_SIZE = 44;
 
+	/// <summary>
+	/// Save AudioClip as wav file
+	/// </summary>
+	/// <param name="filename">Path to save that</param>
+	/// <param name="clip">Unity AudioClip</param>
+	/// <returns></returns>
 	public static bool SaveWav(string filename, AudioClip clip) {
 		if (!filename.ToLower().EndsWith(".wav")) {
 			filename += ".wav";
@@ -54,21 +60,39 @@ public static class SavWav {
 		return true; // TODO: return false if there's a failure saving the file
 	}
 
-	public static IEnumerator TrimSilence(AudioClip clip, float min, Action<AudioClip> callback) {
+	/// <summary>
+	/// Trim silence for audio
+	/// </summary>
+	/// <param name="clip">Unity AudioClip</param>
+	/// <param name="threshold">Silence threshold</param>
+	/// <param name="callback">On end trim event</param>
+	/// <returns></returns>
+	public static IEnumerator TrimSilence(AudioClip clip, float threshold, Action<AudioClip> callback) {
 		var samples = new float[clip.samples * clip.channels];
 
 		clip.GetData(samples, 0);
 
-		yield return TrimSilence(new List<float>(samples), min, clip.channels, clip.frequency, false, false, callback);
+		yield return TrimSilence(new List<float>(samples), threshold, clip.channels, clip.frequency, false, false, callback);
 	}
 
-	public static IEnumerator TrimSilence(List<float> samples, float min, int channels, int hz, bool _3D, bool stream, Action<AudioClip> callback) {
+	/// <summary>
+	/// Trim silence for audio
+	/// </summary>
+	/// <param name="samples">List of audio samples</param>
+	/// <param name="threshold">Silence threshold</param>
+	/// <param name="channels">Channels. 1 - mono, 2 - stereo</param>
+	/// <param name="hz">HZ. recommend is 44000</param>
+	/// <param name="_3D">is 3d sound?</param>
+	/// <param name="stream">Is streaming sound?</param>
+	/// <param name="callback">On end trim event></param>
+	/// <returns></returns>
+	public static IEnumerator TrimSilence(List<float> samples, float threshold, int channels, int hz, bool _3D, bool stream, Action<AudioClip> callback) {
 		int i;
 
 		for (i = 0; i < samples.Count; i++) {
 			if (i % 22050 == 0)
 				yield return null;
-			if (Mathf.Abs(samples[i]) > min)
+			if (Mathf.Abs(samples[i]) > threshold)
 				break;
 		}
 		yield return null;
@@ -79,7 +103,7 @@ public static class SavWav {
 		for (i = samples.Count - 1; i > 0; i--) {
 			if (i % 22050 == 0)
 				yield return null;
-			if (Mathf.Abs(samples[i]) > min)
+			if (Mathf.Abs(samples[i]) > threshold)
 				break;
 		}
 		yield return null;
@@ -97,19 +121,37 @@ public static class SavWav {
 		callback(clip);
 	}
 
-	public static IEnumerator TrimSilenceAll(AudioClip clip, float min, Action<AudioClip> callback) {
+	/// <summary>
+	/// Trim silence for audio
+	/// </summary>
+	/// <param name="clip">Unity AudioClip</param>
+	/// <param name="threshold">Silence threshold</param>
+	/// <param name="callback">On end trim event></param>
+	/// <returns></returns>
+	public static IEnumerator TrimSilenceAll(AudioClip clip, float threshold, Action<AudioClip> callback) {
 		var samples = new float[clip.samples * clip.channels];
 
 		clip.GetData(samples, 0);
-		yield return TrimSilenceAll(new List<float>(samples), min, clip.channels, clip.frequency, false, false, callback);
+		yield return TrimSilenceAll(new List<float>(samples), threshold, clip.channels, clip.frequency, false, false, callback);
 	}
 
-	public static IEnumerator TrimSilenceAll(List<float> samples, float min, int channels, int hz, bool _3D, bool stream, Action<AudioClip> callback) {
+	/// <summary>
+	/// Trim silence for audio
+	/// </summary>
+	/// <param name="samples">List of audio samples</param>
+	/// <param name="threshold">Silence threshold</param>
+	/// <param name="channels">Channels. 1 - mono, 2 - stereo</param>
+	/// <param name="hz">HZ. recommend is 44000</param>
+	/// <param name="_3D">is 3d sound?</param>
+	/// <param name="stream">Is streaming sound?</param>
+	/// <param name="callback">On end trim event></param>
+	/// <returns></returns>
+	public static IEnumerator TrimSilenceAll(List<float> samples, float threshold, int channels, int hz, bool _3D, bool stream, Action<AudioClip> callback) {
 		List<float> newSamples = new List<float>(samples.Count);
 		for (int i = 0; i < samples.Count; ++i) {
 			if (i % 22050 == 0)
 				yield return null;
-			if (Mathf.Abs(samples[i]) > min)
+			if (Mathf.Abs(samples[i]) > threshold)
 				newSamples.Add(samples[i]);
 		}
 
@@ -122,44 +164,10 @@ public static class SavWav {
 		callback(clip);
 	}
 
-	static FileStream CreateEmpty(string filepath) {
-		var fileStream = new FileStream(filepath, FileMode.Create);
-		byte emptyByte = new byte();
-
-		for (int i = 0; i < HEADER_SIZE; i++) //preparing the header
-		{
-			fileStream.WriteByte(emptyByte);
-		}
-
-		return fileStream;
-	}
-
-	static void ConvertAndWrite(FileStream fileStream, AudioClip clip) {
-
-		var samples = new float[clip.samples];
-
-		clip.GetData(samples, 0);
-
-		Int16[] intData = new Int16[samples.Length];
-		//converting in 2 float[] steps to Int16[], //then Int16[] to Byte[]
-
-		Byte[] bytesData = new Byte[samples.Length * 2];
-		//bytesData array is twice the size of
-		//dataSource array because a float converted in Int16 is 2 bytes.
-
-		float rescaleFactor = 32767; //to convert float to Int16
-
-		for (int i = 0; i < samples.Length; i++) {
-			intData[i] = (short)(samples[i] * rescaleFactor);
-			Byte[] byteArr = new Byte[2];
-			byteArr = BitConverter.GetBytes(intData[i]);
-			byteArr.CopyTo(bytesData, i * 2);
-		}
-
-		fileStream.Write(bytesData, 0, bytesData.Length);
-	}
-
-	public static void WriteHeader(FileStream stream, AudioClip clip) {
+	/// <summary>
+	/// Write riff header
+	/// </summary>
+	public static void WriteHeader(MemoryStream stream, AudioClip clip) {
 		var hz = clip.frequency;
 		var channels = clip.channels;
 		var samples = clip.samples;
@@ -216,7 +224,49 @@ public static class SavWav {
 		stream.Seek(0, SeekOrigin.Begin);
 	}
 
-	public static void WriteHeader(MemoryStream stream, AudioClip clip) {
+	/// <summary>
+	/// Create empty file
+	/// </summary>
+	/// <param name="filepath">Path</param>
+	/// <returns></returns>
+	static FileStream CreateEmpty(string filepath) {
+		var fileStream = new FileStream(filepath, FileMode.Create);
+		byte emptyByte = new byte();
+
+		for (int i = 0; i < HEADER_SIZE; i++) //preparing the header
+		{
+			fileStream.WriteByte(emptyByte);
+		}
+
+		return fileStream;
+	}
+
+	static void ConvertAndWrite(FileStream fileStream, AudioClip clip) {
+
+		var samples = new float[clip.samples];
+
+		clip.GetData(samples, 0);
+
+		Int16[] intData = new Int16[samples.Length];
+		//converting in 2 float[] steps to Int16[], //then Int16[] to Byte[]
+
+		Byte[] bytesData = new Byte[samples.Length * 2];
+		//bytesData array is twice the size of
+		//dataSource array because a float converted in Int16 is 2 bytes.
+
+		float rescaleFactor = 32767; //to convert float to Int16
+
+		for (int i = 0; i < samples.Length; i++) {
+			intData[i] = (short)(samples[i] * rescaleFactor);
+			Byte[] byteArr = new Byte[2];
+			byteArr = BitConverter.GetBytes(intData[i]);
+			byteArr.CopyTo(bytesData, i * 2);
+		}
+
+		fileStream.Write(bytesData, 0, bytesData.Length);
+	}
+
+	static void WriteHeader(FileStream stream, AudioClip clip) {
 		var hz = clip.frequency;
 		var channels = clip.channels;
 		var samples = clip.samples;

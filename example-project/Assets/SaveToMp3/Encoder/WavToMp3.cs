@@ -9,6 +9,12 @@ using NAudio.Wave;
 
 
 public static class WavToMp3 {
+	/// <summary>
+	/// Convert Wav to MP3 to send it via network or save it to file
+	/// </summary>
+	/// <param name="clip">Unity AudioClip</param>
+	/// <param name="bitRate">Mp3 bitrate. Recommend to set it to 128</param>
+	/// <returns></returns>
 	public static byte[] ConvertWavToMp3(AudioClip clip, int bitRate) {
 		var samples = new float[clip.samples * clip.channels];
 

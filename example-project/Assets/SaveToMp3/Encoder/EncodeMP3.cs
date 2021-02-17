@@ -20,6 +20,12 @@ using NAudio.Wave.WZT;
 using NAudio.Wave;
 
 public static class EncodeMP3 {
+	/// <summary>
+	/// Save clip as mp3
+	/// </summary>
+	/// <param name="clip">Unity AudioClip</param>
+	/// <param name="path">Path to save it</param>
+	/// <param name="bitRate">Mp3 bitrate. Recommend to set it to 128</param>
 	public static void SaveMp3(AudioClip clip, string path, int bitRate) {
 		if (!path.EndsWith(".mp3"))
 			path = path + ".mp3";
@@ -27,7 +33,12 @@ public static class EncodeMP3 {
 		ConvertAndWrite(clip, path, bitRate);
 	}
 
-	//  derived from Gregorio Zanon's script
+	/// <summary>
+	/// Save clip as wav
+	/// </summary>
+	/// <param name="clip">Unity AudioClip</param>
+	/// <param name="path">Path to save it</param>
+	/// <param name="bitRate">Mp3 bitrate. Recommend to set it to 128</param>
 	private static void ConvertAndWrite(AudioClip clip, string path, int bitRate) {
 		var samples = new float[clip.samples * clip.channels];
 
@@ -52,6 +63,13 @@ public static class EncodeMP3 {
 		File.WriteAllBytes(path, ConvertWavToMp3(bytesData, bitRate));
 	}
 
+	/// <summary>
+	/// Convert wav bytes to mp3 bytes
+	/// derived from Gregorio Zanon's script
+	/// </summary>
+	/// <param name="wavFile">Wav file readed as array</param>
+	/// <param name="bitRate">Mp3 bitrate. Recommend to set it to 128</param>
+	/// <returns></returns>
 	private static byte[] ConvertWavToMp3(byte[] wavFile, int bitRate) {
 
 		var retMs = new MemoryStream();
