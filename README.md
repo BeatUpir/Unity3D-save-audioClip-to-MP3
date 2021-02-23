@@ -4,7 +4,7 @@ With this package you can save an audioclip to mp3 in unity3d. Also plugin can s
 It works with *Windows, Android and IOS(tested)*. And probably on *Mac(untested, but should work)*. 
 
 Lame unity port from https://github.com/3wz/Lame-For-Unity  
-Wav save script from gist.github.com/darktable/2317063
+Wav save script from https://gist.github.com/darktable/2317063
 
 ### Convert audio clip to mp3 bytes array. For example to send it via network:
 ```C#
