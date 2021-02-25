@@ -1,0 +1,236 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro N; OS build 19041.630; Version 2004; 64bit' Language: 'en' Physical Memory: 16257 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/repo/Unity3D-save-audioClip-to-MP3/example-project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52174
+Successfully changed project path to: C:/repo/Unity3D-save-audioClip-to-MP3/example-project
+C:/repo/Unity3D-save-audioClip-to-MP3/example-project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 25.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.2f1 (068178b99f32)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/repo/Unity3D-save-audioClip-to-MP3/example-project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:   
+    VRAM:     4019 MB
+    Driver:   27.21.14.5671
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56980
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.002997 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 35.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.329 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001437 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.834 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1102 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 56.7 MB.
+System memory in use after: 56.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1540.
+Total: 1.641400 ms (FindLiveObjects: 0.122000 ms CreateObjectMapping: 0.036900 ms MarkObjects: 1.416800 ms  DeleteObjects: 0.064500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/SaveToMp3/Readme.txt
+  artifactKey: Guid(d318ccd73775e9c4b961ddfa67d65c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SaveToMp3/Readme.txt using Guid(d318ccd73775e9c4b961ddfa67d65c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65e747f04fb9db2dbfde01cb34bf3771') in 0.049896 seconds
+  Import took 0.051918 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001303 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.875 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1096 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 56.5 MB.
+System memory in use after: 56.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1542.
+Total: 1.979400 ms (FindLiveObjects: 0.134700 ms CreateObjectMapping: 0.033300 ms MarkObjects: 1.782700 ms  DeleteObjects: 0.027200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 73.586131 seconds.
+  path: Assets/SaveToMp3/Example/ExampleScript.cs
+  artifactKey: Guid(7a625143d82bde344b2d405499c6bbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SaveToMp3/Example/ExampleScript.cs using Guid(7a625143d82bde344b2d405499c6bbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c917ce0aa3e9f517e8ba53bd31c405') in 0.015285 seconds
+  Import took 0.017120 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001362 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.835 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1096 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 56.6 MB.
+System memory in use after: 56.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1544.
+Total: 1.791200 ms (FindLiveObjects: 0.128500 ms CreateObjectMapping: 0.032200 ms MarkObjects: 1.615100 ms  DeleteObjects: 0.014100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 111.414463 seconds.
+  path: Assets/SaveToMp3/Example/ExampleScript.cs
+  artifactKey: Guid(7a625143d82bde344b2d405499c6bbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SaveToMp3/Example/ExampleScript.cs using Guid(7a625143d82bde344b2d405499c6bbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fca7d6ff897bd6d81fde5a242a6a85c') in 0.005241 seconds
+  Import took 0.007518 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001754 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.811 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1096 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 56.6 MB.
+System memory in use after: 56.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1546.
+Total: 1.893500 ms (FindLiveObjects: 0.406400 ms CreateObjectMapping: 0.162100 ms MarkObjects: 1.301300 ms  DeleteObjects: 0.021800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 371.412855 seconds.
+  path: Assets/SaveToMp3/Encoder/WavToMp3.cs
+  artifactKey: Guid(2bc1aa53ea1d574459f3dbb4eedc5345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SaveToMp3/Encoder/WavToMp3.cs using Guid(2bc1aa53ea1d574459f3dbb4eedc5345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c4544384931f00a63f3daea3ea69beb') in 0.011420 seconds
+  Import took 0.013315 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001376 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.792 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1096 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 56.7 MB.
+System memory in use after: 56.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1548.
+Total: 2.062100 ms (FindLiveObjects: 0.320000 ms CreateObjectMapping: 0.046000 ms MarkObjects: 1.673800 ms  DeleteObjects: 0.021000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 295.430021 seconds.
+  path: Assets/SaveToMp3/Encoder/EncodeMP3.cs
+  artifactKey: Guid(5067b4ed11cff42459e750438059a60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SaveToMp3/Encoder/EncodeMP3.cs using Guid(5067b4ed11cff42459e750438059a60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41eeba7a51c2ceb04a7aa20ed0c940d0') in 0.007527 seconds
+  Import took 0.009363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.130049 seconds.
+  path: Assets/SaveToMp3/Encoder/SavWav.cs
+  artifactKey: Guid(3a4a731eaf00d0149bf9f6900aa4ad39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SaveToMp3/Encoder/SavWav.cs using Guid(3a4a731eaf00d0149bf9f6900aa4ad39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '448b2912219ec418f0c47592f7872a94') in 0.006241 seconds
+  Import took 0.008379 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
