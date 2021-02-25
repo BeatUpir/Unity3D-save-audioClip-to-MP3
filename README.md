@@ -40,6 +40,13 @@ SavWav.SaveWav($"{Application.dataPath}/wavFile", clip);
 ```
 	
 ## Installation
+### From github
+1. Download a source code zip this page
+2. Extract it
+3. Import it into the following directory in your Unity project
+   - `Packages` (It works as an embedded package. For Unity 2018.1 or later)
+   - `Assets` (Legacy way. For Unity 2017.1 or later)
+
 ### From Unity Asset Store
 1. https://assetstore.unity.com/packages/tools/audio/save-audioclip-to-mp3-189071
 2. Add it to project as usual
