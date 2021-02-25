@@ -39,4 +39,7 @@ SavWav.SaveWav($"{Application.dataPath}/wavFile", clip);
 }
 ```
 	
-
+## Installation
+### From Unity Asset Store
+1. https://assetstore.unity.com/packages/tools/audio/save-audioclip-to-mp3-189071
+2. Add it to project as usual
