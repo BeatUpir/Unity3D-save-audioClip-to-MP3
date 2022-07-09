@@ -1,11 +1,4 @@
 # Save audioClip to MP3
-
-
-**!WARNING!**  
-**Probably, saving to mp3, broken for Unity 2020+. But all other stuff working**  
-**FormatException: Not a WAVE file - no RIFF header**  
-_Sorry, no time to look into that_  
-
 With this package you can save an audioclip to mp3 in unity3d. Also plugin can save audioclip to wav and convert wav to mp3.
 
 It works with *Windows, Android and IOS(tested)*. And probably on *Mac(untested, but should work)*. 
@@ -27,7 +20,6 @@ byte[] mp3 = WavToMp3.ConvertWavToMp3(clip, 128);
 
 ### Save AudioClip at path with defined bitray as mp3
 ```C#
-// THIS METHOD PROBABLY BROKEN FOR UNITY 2020+
 public AudioClip clip;
 
 void Start(){
@@ -47,14 +39,4 @@ SavWav.SaveWav($"{Application.dataPath}/wavFile", clip);
 }
 ```
 	
-## Installation
-### From github
-1. Download a source code zip this page
-2. Extract it
-3. Import it into the following directory in your Unity project
-   - `Packages` (It works as an embedded package. For Unity 2018.1 or later)
-   - `Assets` (Legacy way. For Unity 2017.1 or later)
 
-### From Unity Asset Store
-1. https://assetstore.unity.com/packages/tools/audio/save-audioclip-to-mp3-189071
-2. Add it to project as usual
